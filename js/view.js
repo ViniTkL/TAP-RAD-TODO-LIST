@@ -40,9 +40,7 @@ class view { constructor(){}
                     </a>
 
                 </button>
-
-                <div class="tapando"></div>
-        
+  
             </div>
 
             <style>
@@ -57,6 +55,18 @@ class view { constructor(){}
 
                 .icon-new{
                     opacity: 90%;
+                }
+
+                #imagem-meio{
+                    display: none;
+                }
+
+                #first-text{
+                    display: none;
+                }
+
+                #second-text{
+                    display: none;
                 }
                 
             </style>
