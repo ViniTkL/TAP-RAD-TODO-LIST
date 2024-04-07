@@ -40,8 +40,26 @@ class view { constructor(){}
                     </a>
 
                 </button>
-                
+
+                <div class="tapando"></div>
+        
             </div>
+
+            <style>
+                #text, #casinha, #descricao{
+                    opacity: 40%;
+                }
+                     
+                .vetor1, .vetor2, .vetor3, .little-options, .profile, .icon-casa, 
+                .icon-calendar, .gg-math-plus, .icon-focuse, .icon-profile{
+                    opacity: 40%;
+                }
+
+                .icon-new{
+                    opacity: 90%;
+                }
+                
+            </style>
 
         </section>
           

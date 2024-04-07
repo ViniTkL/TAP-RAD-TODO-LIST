@@ -146,3 +146,10 @@ input:focus {
 .save-icon{
     border: none;
 }
+
+.tapando{
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    top: -100px;
+}
