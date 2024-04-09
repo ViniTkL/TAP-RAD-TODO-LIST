@@ -20,6 +20,10 @@ html,body{
 
 .p-subtitle-nav{font-size: 12px;}
 
+.info-meio{
+    display: flex;
+}
+
 .icon{
     width: 48px;
     height: 50px;
@@ -35,5 +39,4 @@ html,body{
 .btn:hover{background-color: #6264c7}
 
 .bi {font-size: 24px;}
-
 
