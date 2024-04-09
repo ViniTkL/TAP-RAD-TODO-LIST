@@ -1,0 +1,34 @@
+.corpoTask{
+    height: 228px;
+    top: 262px;  
+}
+
+#Add-Task-Name{font-size: 20px;}
+
+.name-task, .description-task{
+    border: 1px solid #363636;
+    font-size: 18px;
+}
+
+input:focus {
+    border: 1px solid white;
+    outline: none;
+}
+
+.name-task::placeholder {
+    font-weight: 400;
+    opacity: 60%;
+    color: white;
+}
+
+.icons{
+
+    left: 15px;
+}
+
+.save-icon{
+    right: 26px;
+    top: 176px
+}
+
+.save-icon{transform: rotate(45deg);}
