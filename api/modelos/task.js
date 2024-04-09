@@ -4,9 +4,10 @@ const taskSchema = new mongoose.Schema({
     toDo: String,
     description: String,
     priority: Number,
-    categorie: String
+    categorie: String,
+    done: Boolean
 })
 
-const task = mongoose.model("tasks", taskSchema);
+const Task = mongoose.model("tasks", taskSchema);
 
-module.exports = task;
+module.exports = Task;
