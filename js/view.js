@@ -5,71 +5,59 @@ class view { constructor(){}
 
         return `
         
-            <section class="conteinerTask">
+            <section class="container-task color-navigation d-flex justify-content-center align-items-center">
 
-            <div class="corpoTask">
+                <div class="corpoTask position-fixed color-navigation w-100 container d-flex flex-column rounded-2">
 
-                <p id="Add-Task-Name">Add Task</p>
+                    <p id="Add-Task-Name" class="text-white text-start fw-bold my-3  mx-3 ">Add Task</p>
+        
+                    <input class="name-task color-navigation h-1 rounded-1 fw-2 px-3 py-2 mx-3 mb-2 text-white fw-normal" type="text" placeholder="Title" spellcheck="false">
+
+                    <input class="description-task color-navigation h-1 rounded-1 fw-2 px-3 py-2 mx-3 mt-0 mb-3 text-white fw-normal" type="text" placeholder="Description" spellcheck="false">
+
+                    <div class="icons  d-flex flex-row justify-content-between position-relative w-50">
+
+                        <a href="checklist.jpg" class="link-timer text-decoration-none">
+                        <i class="bi bi-stopwatch text-white mx-2 my-2"></i>
+                        </a>
+
+                        <a href="checklist.jpg" class="link-tag text-decoration-none">
+                        <i class="bi bi-tag text-white"></i>
+                        </a>
+
+                        <a href= "checklist.jpg" class="link-flag text-decoration-none">
+                        <i class="bi bi-flag text-white"></i>
+                        </a>
+
+                    </div>
+
+                    <button class="save-icon color-navigation position-absolute d-flex align-items-center border-0">
+                        <a class="link-send">
+                            <i class="bi bi-send text-blue"></i>
+                        </a>
+
+                    </button>
     
-                <input class="name-task" type="text" placeholder="Title" spellcheck="false">
-
-                <input class="description-task" type="text" placeholder="Description" spellcheck="false">
-
-                <div class="icons">
-
-                    <a href="checklist.jpg" class="link-timer">
-                    <i class="gg-timer"></i>
-                    </a>
-
-                    <a href="checklist.jpg" class="link-tag">
-                    <i class="gg-pentagon-down"></i>
-                    </a>
-
-                    <a href= "checklist.jpg" class="link-flag">
-                    <i class="gg-flag-alt"></i>
-                    </a>
-
                 </div>
 
-                <button class="save-icon">
+                <style>
+                    .icon, #icon-header, .p-subtitle, .p-subtitle-nav {
+                        opacity: 40%;
+                    }
+                        
+                    #icon-plus{
+                        opacity: 80%
+                    }
 
-                    <a class="link-send">
+                    #img-profile{
+                        opacity: 60%;
+                    }
 
-                        <i class="gg-chevron-right-r"></i>
+                    .info-meio{
+                        display: none;
+                    }
 
-                    </a>
-
-                </button>
-  
-            </div>
-
-            <style>
-                #text, #casinha, #descricao{
-                    opacity: 40%;
-                }
-                     
-                .vetor1, .vetor2, .vetor3, .little-options, .profile, .icon-casa, 
-                .icon-calendar, .gg-math-plus, .icon-focuse, .icon-profile{
-                    opacity: 40%;
-                }
-
-                .icon-new{
-                    opacity: 90%;
-                }
-
-                #imagem-meio{
-                    display: none;
-                }
-
-                #first-text{
-                    display: none;
-                }
-
-                #second-text{
-                    display: none;
-                }
-                
-            </style>
+                </style>
 
         </section>
           
