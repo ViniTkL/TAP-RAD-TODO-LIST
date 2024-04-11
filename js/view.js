@@ -65,4 +65,7 @@ class view { constructor(){}
 
     }
 
+    renderTasks(){
+        
+    }
 }

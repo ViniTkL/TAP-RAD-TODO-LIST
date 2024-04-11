@@ -26,8 +26,14 @@ closeTask(){
 
     const SaveIcon = document.querySelector(".save-icon")
     //Tratar e salvar os dados aqui antes de excluir a task 
+    
     SaveIcon.addEventListener("click", () =>{ 
-                        
+        const title =  document.querySelector(".name-task").value
+        const description = document.querySelector(".description-task").value
+
+        
+        alert(`titulo: ${title} description: ${description}`)               
+        
         this.AddTask.innerHTML = ""
         
     })
