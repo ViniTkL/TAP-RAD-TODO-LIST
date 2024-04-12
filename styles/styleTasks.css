@@ -37,7 +37,27 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    width: 75%;
+    width: 80%;
+}
+
+.toDo-day{
+    background-color: #363636;
+    height: 31px;
+    width: 71px;
+    align-self: start;
+    border-radius: 6px;
+    padding: 5px;
+    gap: 10px;
+    text-align: left;
+}
+
+.toDo-day > p{
+    font-family: Lato;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.3199999928474426px;
+    color: #FFFFFF36;
 }
 
 .toDo{
@@ -58,12 +78,16 @@
 
 .toDo-body > h2 {
     font-size: 16px;
-    color: #FFFFFF;
+    color: #FFFFFFDE;
 }
 
 
 .toDo-body > p {
+    font-family: Lato;
     font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.3199999928474426px;
     color: #AFAFAF;
 }
 
