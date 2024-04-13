@@ -14,6 +14,7 @@
 }
 
 .search-bar{
+    position: relative;
     font-family: Lato;
     font-size: 16px;
     font-weight: 400;
@@ -29,7 +30,14 @@
     background-color: #1D1D1D;
     border: 0.8px solid #979797;
     border-radius: 4px;
-    padding: 10px;
+    padding: 10px 10px 10px 40px;
+}
+
+.search-bar > .bi {
+    position: absolute;
+    top: 25%;
+    left: 10px;
+    font-size: 24px;
 }
 
 .toDo-list{
@@ -41,54 +49,140 @@
 }
 
 .toDo-day{
+    position: relative;
+    bottom: 10px;
     background-color: #363636;
     height: 31px;
-    width: 71px;
+    width: fit-content;
     align-self: start;
     border-radius: 6px;
     padding: 5px;
     gap: 10px;
-    text-align: left;
+    margin-top: 20px;
 }
 
 .toDo-day > p{
     font-family: Lato;
     font-size: 12px;
     font-weight: 400;
-    line-height: 21px;
+    line-height: 11px;
     letter-spacing: -0.3199999928474426px;
-    color: #FFFFFF36;
+    color: #FFFFFFDE;
 }
 
-.toDo{
-    width: 100%;
-    height: 72px;
-    border-radius: 4px;
-    background-color: #363636;
-    padding: 5px;
-}
-
-.toDo-body{
-    font-family: 'Lato';
-    font-weight: 400;
-    line-height: 21px;
-    letter-spacing: -0.3199999928474426px;
-    text-align: left;
-}
-
-.toDo-body > h2 {
+.toDo-day p > .bi-chevron-compact-down{
+    position: relative;
+    top: 3px;
+    padding: 2px;
     font-size: 16px;
     color: #FFFFFFDE;
 }
 
+.toDo{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 72px;
+    border-radius: 4px;
+    background-color: #363636;
+}
 
-.toDo-body > p {
+.toDo-body{
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Lato';
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.3199999928474426px;
+    justify-content: left;
+    align-items: center;
+}
+
+.toDo-body > .bi-circle{
+    font-size: 16px;
+    color: #FFFFFFDE;
+    margin-left: 10px;
+    position: absolute;
+}
+
+.body-text{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 40px ;
+}
+
+.body-text > h2 {
+    font-size: 16px;
+    color: #FFFFFFDE;
+}
+
+.body-text > p {
     font-family: Lato;
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
     letter-spacing: -0.3199999928474426px;
     color: #AFAFAF;
+}
+
+.toDo-classification{
+    display: flex;
+    position: absolute;
+    right: 10px;
+    align-self: flex-end;
+    max-width: 100%;
+    height: 29px;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.toDo-tag{
+    display: flex;
+    border-radius: 4px;
+    background-color: #9741CC;
+    padding: 5px 10px 5px 10px;
+    gap: 5px;
+}
+
+.toDo-tag > .bi{
+    font-size: 14px;
+}
+
+.toDo-tag > p{
+    font-family: Lato;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.3199999928474426px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.toDo-priority{
+    height: 100%;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid #8687E7;
+    padding: 4px 8px 4px 8px;
+    gap:5px
+}
+
+.toDo-priority > .bi{
+    font-size: 14px;
+    color: #FFFFFFDE;
+}
+
+.toDo-priority > p{
+    font-family: Lato;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.3199999928474426px;
+    text-align: left;
+    color: #E8E8E8;
 }
 
 
