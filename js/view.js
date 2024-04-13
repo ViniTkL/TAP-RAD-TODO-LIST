@@ -65,7 +65,33 @@ class view { constructor(){}
 
     }
 
-    renderTasks(){
-        
+    renderTasks({title, hour, date, priority, tag}){
+        return`
+        <div class="toDo-day">
+            <p>
+                ${date}
+                <i class="bi bi-chevron-compact-down"></i>
+            </p>
+        </div>
+        <div class="toDo">
+        <div class="toDo-body">
+            <i class="bi bi-circle"></i>
+            <div class="body-text">
+                <h2>${title}</h2>
+                <p>${date} às ${hour}</p>
+            </div>
+        </div>
+        <div class="toDo-classification">
+            <div class="toDo-tag">
+                <i class="bi bi-book"></i>
+                <p>${tag}</p>
+            </div>
+            <div class="toDo-priority">
+                <i class="bi bi-flag"></i>
+                <p>${priority}</p>
+            </div>
+        </div>
+    </div>
+        `
     }
 }
