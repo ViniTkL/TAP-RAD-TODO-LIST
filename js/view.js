@@ -65,7 +65,7 @@ class view { constructor(){}
 
     }
 
-    renderTasks({title, hour, date, priority, tag}){
+    renderTasks({title, priority, categorie, date, hour}){
         return`
         <div class="toDo-day">
             <p>
@@ -84,7 +84,7 @@ class view { constructor(){}
         <div class="toDo-classification">
             <div class="toDo-tag">
                 <i class="bi bi-book"></i>
-                <p>${tag}</p>
+                <p>${categorie}</p>
             </div>
             <div class="toDo-priority">
                 <i class="bi bi-flag"></i>

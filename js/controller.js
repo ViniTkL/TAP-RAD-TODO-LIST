@@ -2,6 +2,7 @@ class controller {
     
     constructor(){
 
+    this.toDosModel = new model();
 
     this.ButtonAddTask = document.querySelector(".btn")
 
@@ -35,15 +36,18 @@ class controller {
             const title =  document.querySelector(".name-task").value
             const description = document.querySelector(".description-task").value
             const hour = this.hourFormat(new Date());
-            const date = this.getToDoDate(new Date());
+            const date = this.getToDoDate(new Date()); // aqui vai passar essa data ou a data do banco de dados -> se ligar nisso
             const priority = 1 // depois pegar do HTML
-            const tag = 'teste' // depois pegar do HTML 
+            const categorie = 'teste' // depois pegar do HTML 
+            const done = false;
             // const iconTag || para fazer depois -> fazr função que retorna a classe do icon da tag de acordo com a tag escolhida 
-            const ToDo = {title, hour, date, priority, tag}
+            const ToDo = {title, description, priority, categorie, done, date, hour}
+            const Teste = this.getTodos();
+            this.toDosModel.save(ToDo)
 
             this.toDoList.innerHTML += this.View.renderTasks(ToDo)
             
-            alert(`titulo: ${title} description: ${description} date: ${hour} haha: ${date}`)               
+            alert(`titulo: ${typeof title} description: ${typeof description} date: ${hour} haha: ${date}`)               
             
             this.AddTask.innerHTML = ""
             
@@ -71,5 +75,11 @@ class controller {
         const diffDays = Math.ceil(timeDiff / dayInMs); 
       
         return toDoCreatedDate[diffDays];
+    }
+
+    getTodos(){
+        const toDos = this.toDosModel.init()
+        console.log('constructor:', toDos);
+        return toDos;
     }
 }

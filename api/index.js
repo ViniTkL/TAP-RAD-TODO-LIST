@@ -1,7 +1,6 @@
-const express = require("express")
 const mongoose = require("mongoose")
 const Task = require("./modelos/task")
-
+const cors = require("cors")
 
 const setup = async () => {
     await mongoose.connect("mongodb://127.0.0.1:27017/toDoTasks")
@@ -9,6 +8,7 @@ const setup = async () => {
     const express = require("express")
     const server = express()
 
+    server.use(cors())
     server.use(express.json())
 
     server.get("/tasks", async (req, res) => {
