@@ -22,7 +22,9 @@ const setup = async () => {
             description,
             priority,
             categorie,
-            done
+            done,
+            date,
+            hour
         } = req.body
         
         const task = new Task({
@@ -30,7 +32,9 @@ const setup = async () => {
             description,
             priority,
             categorie,
-            done
+            done,
+            date,
+            hour
         })
 
         task.save()
