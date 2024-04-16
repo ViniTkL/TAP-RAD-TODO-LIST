@@ -28,9 +28,14 @@ html,body{
     width: 48px;
     height: 50px;
 }
-
-.btn{
+.color-blue{
     background-color: #8687EF;
+}
+/* Cor do botao + e send */
+.text-color-blue{ 
+    color: #8687EF;
+}
+.btn{
     width: 64px;
     height: 64px;
     top: -50px;

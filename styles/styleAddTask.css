@@ -21,10 +21,7 @@ input:focus {
     color: white;
 }
 
-.icons{
-
-    left: 15px;
-}
+.icons{left: 15px;}
 
 .save-icon{
     right: 26px;
