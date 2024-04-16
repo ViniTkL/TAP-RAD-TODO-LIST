@@ -1,12 +1,13 @@
 class model{
     constructor(){}
 
-     init(){
-        const toDoList = fetch('http://localhost:3000/tasks')
+     async init(){
+        const toDoList = await fetch('http://localhost:3000/tasks')
             .then(result => result.json())
-            .then( result2 => console.log(result2))
+            .then( result2 => {return result2})
             .catch(err => console.error(err));
         
+        console.log('toDoList', toDoList);
         return toDoList
     }
 
