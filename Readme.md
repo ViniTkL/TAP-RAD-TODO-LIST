@@ -11,7 +11,7 @@
 
 1. Para a API poder salvar e consultar os dados, devemos criar uma database denominada **toDoTasks** na URL: **mongodb://127.0.0.1:27017**
 
-2. Dentro da database **toDoTasks** criaremos a collection **tasks** que será onde iremos guardar e salvar os dados das todos criadas na nossa aplicação
+2. Dentro da database **toDoTasks** criaremos a collection **todos** que será onde iremos guardar e salvar os dados das todos criadas na nossa aplicação
 
 
 ### Utilizando a API
