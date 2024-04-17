@@ -16,33 +16,38 @@ class controller {
 
     this.toDoList = document.querySelector(".toDo-list")
 
+    this.toDoDoneList = document.querySelector(".toDo-list-done")
+
     this.showTask()
     
     this.showTodosCreatedBefore();
 
+    this.drag()
+
 } 
 
     async showTodosCreatedBefore(){
-        const isTodosCreated = await this.getTodos();    
-        
-        console.log('isTodosCreated', isTodosCreated);   
-        
-        if(isTodosCreated.length >= 1){
-
+        const todosCreated = await this.getTodos();    
+        console.log('todosCreated', todosCreated);   
+      
+        if(todosCreated.length){
             console.log('não aplica vazio');
-            isTodosCreated.forEach(toDo => {
+            todosCreated.forEach((toDo, index) => {
                 //refatorar aqui - talvez
                 const {title, description, priority, categorie, done, date, hour} = toDo;
                 const dayCreated = this.formatToDoDate(date);
                 
                 this.toggleHomes();
-                
-                this.toDoList.innerHTML += this.View.renderTasks({title, description, priority, categorie, done, dayCreated, hour});
-            });
 
+                index === 0 ? this.toDoList.innerHTML += this.View.renderToDODay(dayCreated) : '';
+                
+                this.whereToRender({title, description, priority, categorie, done, dayCreated, hour});
+            });
+            
         }else{
             this.homeWithTodos.classList.add('vazio');
         }
+
     }
 
     showTask(){
@@ -53,15 +58,14 @@ class controller {
                 this.closeTask()
 
         })    
-        
     }
 
     closeTask(){
 
-        const SaveIcon = document.querySelector(".save-icon")
+        const buttonCreateToDo = document.querySelector(".save-icon")
         //Tratar e salvar os dados aqui antes de excluir a task 
         
-         SaveIcon.addEventListener("click", () =>{ 
+         buttonCreateToDo.addEventListener("click", () =>{ 
             
             const title =  document.querySelector(".name-task").value
             const description = document.querySelector(".description-task").value
@@ -76,7 +80,9 @@ class controller {
             
             this.toDosModel.save(ToDo)
 
-            this.toDoList.innerHTML += this.View.renderTasks({title, description, priority, categorie, done, dayCreated, hour})
+            console.log(this.toDoList);
+            this.toDoList ? '': this.toDoList.innerHTML += this.View.renderToDODay(dayCreated)
+            this.toDoList.innerHTML += this.View.renderToDO({title, description, priority, categorie, done, dayCreated, hour});
                         
             this.toggleHomes()
             
@@ -95,7 +101,7 @@ class controller {
     }
 
     formatToDoDate(date){
-        const toDoCreatedDate = ['Hoje', 'Hoje', 'Ontem', '3 dias', '4 dias', '5 dias'];
+        const toDoCreatedDay = ['Hoje', 'Hoje', 'Ontem', '3 dias', '4 dias', '5 dias'];
         const dayInMs = 1000 * 3600 * 24;
         const todayDate = new Date();
         const createdDate = new Date(date)
@@ -106,7 +112,7 @@ class controller {
         // diferença de tempo em dias entre as datas
         const diffDays = Math.ceil(timeDiff / dayInMs); 
       
-        return toDoCreatedDate[diffDays];
+        return toDoCreatedDay[diffDays];
     }
 
     async getTodos(){
@@ -119,4 +125,63 @@ class controller {
         this.homeWithTodos.classList.contains('vazio') ? this.homeWithTodos.classList.remove('vazio')  : ""
         this.homeWithTodos.classList.contains('vazio') ? "" : this.homeEmpty.classList.add('vazio') 
     }
+
+    whereToRender({title, description, priority, categorie, done, dayCreated, hour}){
+        done ? 
+        this.toDoDoneList.innerHTML += this.View.renderToDO({title, description, priority, categorie, done, dayCreated, hour})
+        : this.toDoList.innerHTML += this.View.renderToDO({title, description, priority, categorie, done, dayCreated, hour}) 
+    }
+
+    drag(){
+        const toDosUndone = document.querySelectorAll(".toDo-list");
+        const toDosDone = document.querySelectorAll(".toDo-list-done")
+
+        document.addEventListener("dragstart", (e) => {
+        e.target.classList.add("dragging");
+        });
+
+        document.addEventListener("dragend", (e) => {
+        e.target.classList.remove("dragging");
+        });
+
+        toDosUndone.forEach( item => {
+        item.addEventListener("dragover", (e) => {
+            const dragging = document.querySelector(".dragging");
+            const applyAfter = this.getNewPosition(item, e.clientY);
+
+            if (applyAfter) {
+            applyAfter.insertAdjacentElement("beforeend", dragging);
+            } else {
+            item.append(dragging);
+            }
+        });
+        });
+
+        toDosDone.forEach( item => {
+            item.addEventListener("dragover", (e) => {
+                const dragging = document.querySelector(".dragging");
+                const applyAfter = this.getNewPosition(item, e.clientY);
+    
+                if (applyAfter) {
+                applyAfter.insertAdjacentElement("beforeend", dragging);
+                } else {
+                item.append(dragging);
+                }
+            });
+            });
+    }
+
+     getNewPosition(column, posY) {
+        const cards = column.querySelectorAll(".item:not(.dragging)");
+        let result;
+
+        for (let refer_card of cards) {
+            const box = refer_card.getBoundingClientRect();
+            const boxCenterY = box.y + box.height / 2;
+
+            if (posY >= boxCenterY) result = refer_card;
+        }
+
+        return result;
+        }
 }

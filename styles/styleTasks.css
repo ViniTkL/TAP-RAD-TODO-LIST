@@ -9,7 +9,7 @@
 .tasks{
    justify-content: center;
    flex-wrap: wrap;
-   overflow: scroll;
+   overflow-y: scroll;
    width: 100%;
    height: 100%;
 }
@@ -21,7 +21,7 @@
     font-weight: 400;
     line-height: 24.08px;
     text-align: left;
-    width: 70%;
+    width: 80%;
     height: 48px;
     z-index: 1;
 }
@@ -69,7 +69,8 @@
     border-radius: 6px;
     padding: 5px;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: -15px;
 }
 
 .toDo-day > p{
@@ -89,7 +90,7 @@
     color: #FFFFFFDE;
 }
 
-.toDo{
+.toDo {
     position: relative;
     display: flex;
     justify-content: left;
@@ -98,6 +99,7 @@
     height: 72px;
     border-radius: 4px;
     background-color: #363636;
+    margin-top: 15px;
 }
 
 .toDo-body{
@@ -200,3 +202,6 @@
     display: none;
 }
 
+.dragging{
+    opacity: 0.5;
+}

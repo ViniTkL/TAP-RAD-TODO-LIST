@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const taskSchema = new mongoose.Schema({
+const toDoSchema = new mongoose.Schema({
     title: String,
     description: String,
     priority: Number,
@@ -10,6 +10,6 @@ const taskSchema = new mongoose.Schema({
     hour: String 
 })
 
-const Task = mongoose.model("tasks", taskSchema);
+const ToDo = mongoose.model("todos", toDoSchema);
 
-module.exports = Task;
+module.exports = ToDo;

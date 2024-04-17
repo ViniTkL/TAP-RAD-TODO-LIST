@@ -2,7 +2,7 @@ class model{
     constructor(){}
 
      async init(){
-        const toDoList = await fetch('http://localhost:3000/tasks')
+        const toDoList = await fetch('http://localhost:3000/todos')
             .then(result => result.json())
             .then( result2 => {return result2})
             .catch(err => console.error(err));
@@ -12,7 +12,7 @@ class model{
     }
 
     save(newToDo){
-        fetch('http://localhost:3000/task', {
+        fetch('http://localhost:3000/todo', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

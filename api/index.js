@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const Task = require("./modelos/task")
+const ToDo = require("./modelos/todo")
 const cors = require("cors")
 
 const setup = async () => {
@@ -11,12 +11,12 @@ const setup = async () => {
     server.use(cors())
     server.use(express.json())
 
-    server.get("/tasks", async (req, res) => {
-        const tasks = await Task.find({})
-        res.send(tasks)
+    server.get("/todos", async (req, res) => {
+        const todos = await ToDo.find({})
+        res.send(todos)
     })
 
-    server.post("/task", (req, res) => {
+    server.post("/todo", (req, res) => {
         const {
             title,
             description,
@@ -27,7 +27,7 @@ const setup = async () => {
             hour
         } = req.body
         
-        const task = new Task({
+        const todo = new ToDo({
             title,
             description,
             priority,
@@ -37,8 +37,8 @@ const setup = async () => {
             hour
         })
 
-        task.save()
-        res.status(200).send(task)
+        todo.save()
+        res.status(200).send(todo)
 
     })
 
