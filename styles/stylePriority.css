@@ -1,0 +1,26 @@
+#priority{
+    width: 327px;
+    height: 360px;
+    background-color: #363636;
+}
+.title{
+    border-bottom: 1px solid rgba(151, 151, 151, 1);
+}
+.background-priority{
+    background: rgba(39, 39, 39, 1)
+}
+
+.bi{
+    font-size: 20px;
+}
+
+.priority{
+    padding-top: 20px;
+    border: none;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
