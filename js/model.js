@@ -26,4 +26,20 @@ class model{
             console.log(newToDo)
         });
     }
+
+    update(_id){
+        fetch('http://localhost:3000/todo', {
+            method: 'put',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: _id
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => {
+            console.log(err); 
+            console.log("deu ruim")
+        });
+    }
 }

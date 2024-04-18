@@ -65,9 +65,10 @@ class view { constructor(){}
 
     }
 
-    renderToDO({title, priority, categorie, dayCreated, hour}){
+    renderToDO({title, priority, categorie, dayCreated, hour, _id}){
+        console.log('id view', _id);
         return`
-        <div class="toDo" draggable="true">
+        <div class="toDo" draggable="true" id="${_id}">
             <div class="toDo-body">
                 <i class="bi bi-circle"></i>
                 <div class="body-text">
