@@ -30,4 +30,4 @@ Para rodar a API utilize o seguinte comando:
 ```bash
 npm run dev
 ```
-OBS: Se o terminal do git não rodar a api, por favor utilizar o powershell.
+OBS (WINDOWS): Se o terminal do git não rodar a api, por favor utilizar o powershell.
