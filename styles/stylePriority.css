@@ -24,3 +24,7 @@
     justify-content: center;
     align-items: center;
 }
+
+.priority:focus{
+    background-color: rgba(134, 135, 231, 1);
+}
