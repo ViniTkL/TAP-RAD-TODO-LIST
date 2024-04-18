@@ -33,15 +33,17 @@ class controller {
         if(todosCreated.length){
             console.log('não aplica vazio');
             todosCreated.forEach((toDo, index) => {
+                console.log(toDo);
                 //refatorar aqui - talvez
-                const {title, description, priority, categorie, done, date, hour} = toDo;
+                const {title, description, priority, categorie, done, date, hour, _id} = toDo;
+                console.log('id', _id);
                 const dayCreated = this.formatToDoDate(date);
                 
                 this.toggleHomes();
 
                 index === 0 ? this.toDoList.innerHTML += this.View.renderToDODay(dayCreated) : '';
                 
-                this.whereToRender({title, description, priority, categorie, done, dayCreated, hour});
+                this.whereToRender({title, description, priority, categorie, done, dayCreated, hour, _id});
             });
             
         }else{
@@ -126,10 +128,10 @@ class controller {
         this.homeWithTodos.classList.contains('vazio') ? "" : this.homeEmpty.classList.add('vazio') 
     }
 
-    whereToRender({title, description, priority, categorie, done, dayCreated, hour}){
+    whereToRender({title, description, priority, categorie, done, dayCreated, hour, _id}){
         done ? 
-        this.toDoDoneList.innerHTML += this.View.renderToDO({title, description, priority, categorie, done, dayCreated, hour})
-        : this.toDoList.innerHTML += this.View.renderToDO({title, description, priority, categorie, done, dayCreated, hour}) 
+        this.toDoDoneList.innerHTML += this.View.renderToDO({title, description, priority, categorie, done, dayCreated, hour, _id})
+        : this.toDoList.innerHTML += this.View.renderToDO({title, description, priority, categorie, done, dayCreated, hour, _id}) 
     }
 
     drag(){
@@ -153,7 +155,8 @@ class controller {
             applyAfter.insertAdjacentElement("beforeend", dragging);
             } else {
             item.append(dragging);
-            }
+            console.log('hwfhseifh');
+            }            
         });
         });
 
@@ -166,9 +169,15 @@ class controller {
                 applyAfter.insertAdjacentElement("beforeend", dragging);
                 } else {
                 item.append(dragging);
-                }
-            });
-            });
+            }
+        });
+        
+        item.addEventListener("dragend",() => {
+            const dragging = document.querySelector(".dragging");
+            console.log('asdas', dragging.id);
+            this.toDosModel.update(dragging.id);
+            })
+        });
     }
 
      getNewPosition(column, posY) {
