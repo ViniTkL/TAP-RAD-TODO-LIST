@@ -1,7 +1,7 @@
 class taskController{
     constructor(){
         
-        this.View = new view()
+        this.View = new viewTask()
         
         this.toDosModel = new model();
         
@@ -9,9 +9,9 @@ class taskController{
         
         this.homeWithTodos = document.querySelector('#tasks-criadas')
         
-        this.ButtonAddTask = document.querySelector(".btn")
+        this.ButtonAddTask = document.querySelector("#icon-plus")
         
-        this.AddTask = document.querySelector(".ButtonAdd")
+        this.AddTask = document.querySelector("#icon-plus")
         
         this.toDoList = document.querySelector(".toDo-list")
         
@@ -19,9 +19,15 @@ class taskController{
         
         this.showTask()
         
-        this.showTodosCreatedBefore();
+        // this.showTodosCreatedBefore();
         
         this.drag()
+
+
+    // const task = document.querySelector("#icon-plus")
+    //     task.addEventListener("click", () => {
+    //             new Router().goTo("task")
+    //     });
         
     } 
     
@@ -56,16 +62,16 @@ class taskController{
     showTask(){
         this.ButtonAddTask.addEventListener("click", () =>{
 
-            this.AddTask.innerHTML += this.View.render()
+            new Router().goTo("task")
 
-                this.closeTask()
+            // this.closeTask()
 
         })    
     }
 
     closeTask(){
 
-        const buttonCreateToDo = document.querySelector(".save-icon")
+        const buttonCreateToDo = document.querySelector("#send-task")
         //Tratar e salvar os dados aqui antes de excluir a task 
         
          buttonCreateToDo.addEventListener("click", () =>{ 

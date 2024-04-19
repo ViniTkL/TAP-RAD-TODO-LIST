@@ -1,6 +1,21 @@
 class model{
     constructor(){}
 
+    createToDo(){
+        const title =  document.querySelector(".name-task").value
+        const description = document.querySelector(".description-task").value
+        const hour = this.hourFormat(new Date());
+        const date = new Date();
+        const dayCreated = this.formatToDoDate(date); 
+        const priority = 1 // depois pegar do HTML
+        const categorie = 'teste' // depois pegar do HTML 
+        const done = false;
+
+        this.toDosModel.save({title, description, priority, categorie, done, date, hour})
+
+        return {title, description, priority, categorie, done, dayCreated, hour}
+    }
+
      async init(){
         const toDoList = await fetch('http://localhost:3000/todos')
             .then(result => result.json())

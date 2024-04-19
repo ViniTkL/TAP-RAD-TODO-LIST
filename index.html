@@ -80,7 +80,7 @@
 
         
         <div id="task" class="align-items-center justify-content-center"> 
-            d
+            
         </div>
     
          <!--Menu final (footer) -->
@@ -124,10 +124,22 @@
         
     </main>
 
-    <script src="./js/controller.js"></script>
-    <script src="./js/view.js"></script>
-    <script>new controller()</script>
-
+    <script src="./js/Controller/taskController.js"></script>
+    <script src="./js/Controller/homeController.js"></script>
+    <script src="./js/Controller/PriorityController.js"></script>
+    <script src="./js/Controller/categoryController.js"></script>
+    <script src="./js/View/viewTask.js"></script>
+    <script src="./js/View/viewPriority.js"></script>
+    <script src="./js/router.js"></script>
+    <script src="./js/model.js"></script>
+    <script>
+        const task = document.querySelector("#icon-plus")
+        task.addEventListener("click", () => {
+                new Router().goTo("task");
+        });
+        
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

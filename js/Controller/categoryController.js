@@ -6,6 +6,6 @@ class categoryController{
 
     init(){
         const view = new viewCategory();
-        this.categoryScreen.innerHTML = view.render();
+        this.categoryScreen.innerHTML += view.render();
     }
 }
