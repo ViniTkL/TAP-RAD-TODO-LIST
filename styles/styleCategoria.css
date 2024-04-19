@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 1);
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
+
+}
+#category{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#input-name-category{
+    height: 48px;
+    background-color: rgba(29, 29, 29, 1);
+    border: 1px solid rgba(151, 151, 151, 1);
+}
+
+#input-name-category::placeholder{color: rgba(175, 175, 175, 1);}
+
+.colors{
+    overflow-x: scroll;
+    height: 50px;
+    white-space:nowrap;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+#btn-category-icons{background-color: rgba(54, 54, 54, 1)}
+
+.btn-category-colors{
+    min-width: 36px;
+    height: 36px;
+    border: none;
+}
+.btn-category-colors:focus{
+    border: 2px solid white; 
+}
+
+#save-cancel{
+    position: absolute;
+    bottom: 0;
+}
+.btn-create-cancel{
+    padding-right: 30px;
+}
+.btn-create-cancel .btn{
+    width: 50%;
+    height: 48px;  
+}
+.btn-cancel{
+    color: aquamarine;
+}
+.color-yellow{ 
+    background: rgba(201, 204, 65, 1);
+}
+.color-green{
+    background: rgba(102, 204, 65, 1);
+}
+.color-grennblue{
+    background: rgba(65, 204, 167, 1);
+}
+.color-darkblue{
+    background: rgba(65, 129, 204, 1);
+}
+.color-lightblue{
+    background: rgba(65, 162, 204, 1);
+}
+.color-orange{
+    background: rgba(204, 132, 65, 1);
+}
+.color-purple{
+    background: rgba(151, 65, 204, 1);
+}
+.color-pink{
+    background: rgba(204, 65, 115, 1);
+}
+.color-red{
+    background: rgb(214, 67, 67);
+}
