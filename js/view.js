@@ -66,7 +66,6 @@ class view { constructor(){}
     }
 
     renderToDO({title, priority, categorie, dayCreated, hour, _id}){
-        console.log('id view', _id);
         return`
         <div class="toDo" draggable="true" id="${_id}">
             <div class="toDo-body">
@@ -97,6 +96,14 @@ class view { constructor(){}
                 ${dayCreated}
                 <i class="bi bi-chevron-compact-down"></i>
             </p>
+        </div>
+        `
+    }
+
+    renderToDoList(dayCreated){
+        return`
+        <div class="toDo-list w100 ${dayCreated}">
+            ${this.renderToDODay(dayCreated)}
         </div>
         `
     }

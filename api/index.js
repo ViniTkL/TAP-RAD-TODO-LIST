@@ -42,17 +42,14 @@ const setup = async () => {
 
     })
     
-    server.put('/todo', (req, res) => {
+    server.put('/todo', async (req, res) => {
         const {_id} = req.body;
 
-        const todo = ToDo.findById(_id);
+       const toDoUpdated =  await ToDo.findByIdAndUpdate(_id, {done: true}, {
+            new: true
+        })
 
-        todo.done = true;
-
-        todo.save()
-
-        console.log('todo: ', todo, 'atualizado com sucesso.' );
-        res.status(200).send(todo)
+        res.status(200).send(toDoUpdated)
 
     })
     

@@ -11,7 +11,7 @@ class model{
         return toDoList
     }
 
-    save(newToDo){
+     save(newToDo){
         fetch('http://localhost:3000/todo', {
             method: 'POST',
             headers: {
@@ -20,7 +20,7 @@ class model{
             body: JSON.stringify(newToDo)
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => console.log('data', data))
         .catch(err => {
             console.log(err); 
             console.log(newToDo)
@@ -29,11 +29,11 @@ class model{
 
     update(_id){
         fetch('http://localhost:3000/todo', {
-            method: 'put',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: _id
+            body: JSON.stringify({_id})
         })
         .then(response => response.json())
         .then(data => console.log(data))
