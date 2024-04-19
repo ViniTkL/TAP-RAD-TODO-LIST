@@ -14,9 +14,9 @@ class viewTask { constructor(){}
                         <a href="checklist.jpg" class="link-timer text-decoration-none">
                         <i class="bi bi-stopwatch text-white mx-2 my-2"></i>
                         </a>
-                        <a href="checklist.jpg" class="link-tag text-decoration-none">
-                        <i class="bi bi-tag text-white"></i>
-                        </a>
+                        <button id="select-category" class="link-flag text-decoration-none border-0" style="background: transparent">
+                            <i class="bi bi-tag text-white"></i>
+                        </button>
                         <button id="select-priority" class="link-flag text-decoration-none border-0" style="background: transparent">
                             <i class="bi bi-flag text-white"></i>
                         </button>

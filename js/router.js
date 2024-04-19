@@ -2,7 +2,8 @@ class Router {
     constructor(){
       this.rotas = {
         'task': "taskController",
-        'priority' : "priorityController"
+        'priority' : "priorityController",
+        'category': "categoryController"
       }
     }
       
