@@ -50,4 +50,47 @@ class viewTask { constructor(){}
 
     }
 
+    renderToDO({title, priority, categorie, dayCreated, hour, _id}){
+        return`
+        <div class="toDo" draggable="true" id="${_id}">
+            <div class="toDo-body">
+                <i class="bi bi-circle"></i>
+                <div class="body-text">
+                    <h2>${title}</h2>
+                    <p>${dayCreated} às ${hour}</p>
+                </div>
+            </div>
+            <div class="toDo-classification">
+                <div class="toDo-tag">
+                    <i class="bi bi-book"></i>
+                    <p>${categorie}</p>
+                </div>
+                <div class="toDo-priority">
+                    <i class="bi bi-flag"></i>
+                    <p>${priority}</p>
+                </div>
+            </div>
+        </div>
+        `
+    }
+
+    renderToDODay(dayCreated){
+      return`  
+        <div class="toDo-day">
+            <p>
+                ${dayCreated}
+                <i class="bi bi-chevron-compact-down"></i>
+            </p>
+        </div>
+        `
+    }
+
+    renderToDoList(dayCreated){
+        return`
+        <div class="toDo-list w100 ${dayCreated}">
+            ${this.renderToDODay(dayCreated)}
+        </div>
+        `
+    }
+
 }
