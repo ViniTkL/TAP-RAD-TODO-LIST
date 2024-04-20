@@ -14,8 +14,6 @@ class categoryController{
         const addCategory = document.querySelector("#btn-add-category");
         const createNewCategory = document.querySelector("#create-new-category");
 
-        console.log(categories);
-
         categories.forEach(categorie => {
             categorie.addEventListener("click", (e) => {
                 const button = document.querySelector('button')

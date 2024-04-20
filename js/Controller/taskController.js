@@ -92,7 +92,6 @@ class taskController{
             priorities.forEach(priority => {
                 priority.addEventListener("click", () => {
                     this.toDosModel.setPriority(priority.value)
-                    console.log('e para mudar', this.toDosModel.getPriority());
                    })
              });
     }
@@ -188,7 +187,6 @@ class taskController{
             applyAfter.insertAdjacentElement("beforeend", dragging);
             } else {
             item.append(dragging);
-            console.log('hwfhseifh');
             }            
         });
         });

@@ -59,7 +59,6 @@ class model{
             .then( result2 => {return result2})
             .catch(err => console.error(err));
         
-        console.log('toDoList', toDoList);
         return toDoList
     }
 
@@ -72,10 +71,9 @@ class model{
             body: JSON.stringify(newToDo)
         })
         .then(response => response.json())
-        .then(data => console.log('data', data))
+        .then(data => data)
         .catch(err => {
-            console.log(err); 
-            console.log(newToDo)
+            console.error(err); 
         });
     }
 
@@ -88,10 +86,9 @@ class model{
             body: JSON.stringify({_id})
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => data)
         .catch(err => {
-            console.log(err); 
-            console.log("deu ruim")
+            console.error(err); 
         });
     }
 }
