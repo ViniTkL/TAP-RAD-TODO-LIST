@@ -12,28 +12,17 @@ class priorityController{
         const view = new viewPriority();
         this.priorityScreen.innerHTML += view.render();
         
-        const priorities = document.querySelectorAll(".priority");
         const cancelar = document.querySelector("#cancel");
         const salvar = document.querySelector("#save-pri");
 
-         
-        priorities.forEach(priority => {
-           priority.addEventListener("click", () => {
-                   this.valorPri(priority.value)
-              })
-        });
-
-    
        salvar.addEventListener("click", () =>{
             this.closeTab();        
-            return this.priorityValue
         })
 
        cancelar.addEventListener("click", () => {
             this.closeTab();
        })
 
-       return 0;
 
     }
 

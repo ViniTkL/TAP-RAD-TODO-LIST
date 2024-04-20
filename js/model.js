@@ -2,8 +2,8 @@ class model{
     constructor(){
         this.title = '';
         this.description = '';
-        this.priority = '';
-        this.categorie = 0;
+        this.priority = 0;
+        this.categorie = '';
     }
 
     setTitle(newTitle){
@@ -11,15 +11,15 @@ class model{
     }
 
     setDescription(newDesc){
-        this.title = newDesc;
+        this.description = newDesc;
     }
 
     setPriority(newPrio){
-        this.title = newPrio;
+        this.priority = newPrio;
     }
 
     setCategorie(newCat){
-        this.title = newCat;
+        this.categorie = newCat;
     }
 
     getTitle(){

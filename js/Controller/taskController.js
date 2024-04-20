@@ -14,17 +14,14 @@ class taskController{
         
         this.AddTask = document.querySelector("#task");
         
-        
-        this.buttonAddTask = document.querySelector("#send-task");
+        this.buttonAddTask = '';
         
         this.toDoList = document.querySelector(".toDo-list")
         
         this.toDoDoneList = document.querySelector(".toDo-list-done")
-         
+        
         this.showTask()
-        
-        this.showTodosCreatedBefore();
-        
+                
         this.drag()
         
     } 
@@ -32,13 +29,18 @@ class taskController{
     showTask(){
         this.AddTask.innerHTML += this.View.render();
 
+        this.buttonAddTask = document.querySelector("#send-task");
+
         document.querySelector("#select-priority").addEventListener("click", () => {
             
             document.querySelector("#add-todo").addEventListener("submit", (e) => {
                 e.preventDefault();
             });
-            
+
             new Router().goTo("priority");
+
+            this.getPriorityValue();
+     
         });
 
         document.querySelector("#select-category").addEventListener("click", () => {
@@ -47,26 +49,30 @@ class taskController{
                 e.preventDefault();
             });
 
-            new Router().goTo("category");
+            new Router().goTo("category");           
         });
 
-       document.querySelector("#send-task").addEventListener("click", () => {
+        this.buttonAddTask.addEventListener("click", () => {
 
             document.querySelector("#add-todo").addEventListener("submit", (e) => {
                 e.preventDefault();
             });
 
             this.closeTask();
+
+            location.reload();
+
+            new Router().goTo('/')
+
         }) 
     }
 
     closeTask(){
 
-        const buttonCreateToDo = document.querySelector("#send-task")
+        console.info('chamou');
+
         //Tratar e salvar os dados aqui antes de excluir a task 
         
-         buttonCreateToDo.addEventListener("click", () =>{ 
-            
             const toDo = this.createToDo()
             
             this.createToDoListDay(toDo)
@@ -77,9 +83,18 @@ class taskController{
 
             new Router().goTo("/");
 
-            location.reload();
-        })
 
+    }
+
+    getPriorityValue(){
+        const priorities = document.querySelectorAll(".priority");
+
+            priorities.forEach(priority => {
+                priority.addEventListener("click", () => {
+                    this.toDosModel.setPriority(priority.value)
+                    console.log('e para mudar', this.toDosModel.getPriority());
+                   })
+             });
     }
 
     createToDo(){
@@ -88,7 +103,7 @@ class taskController{
             const hour = this.hourFormat(new Date());
             const date = new Date();
             const dayCreated = this.formatToDoDate(date); 
-            const priority = 1 // depois pegar do HTML
+            const priority = this.toDosModel.getPriority() // depois pegar do HTML
             const categorie = 'teste' // depois pegar do HTML 
             const done = false;
 
@@ -151,9 +166,7 @@ class taskController{
         
         return toDoCreatedDay[diffDays];
     }
-    
-
- 
+     
     drag(){
         const toDosUndone = document.querySelectorAll(".toDo-list");
         const toDosDone = document.querySelectorAll(".toDo-list-done")
