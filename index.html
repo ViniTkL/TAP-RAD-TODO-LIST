@@ -79,9 +79,19 @@
         </section>
 
         
+        
+        <div id="priority-container" class="align-items-center justify-content-center"> 
+            
+        </div>
+        
+        <div id="categorie-container" class="align-items-center justify-content-center"> 
+            
+        </div>
+        
         <div id="task" class="align-items-center justify-content-center"> 
             
         </div>
+    
     
          <!--Menu final (footer) -->
         <nav class="w-100" style="height: 124px;">
@@ -130,11 +140,15 @@
     <script src="./js/Controller/categoryController.js"></script>
     <script src="./js/View/viewTask.js"></script>
     <script src="./js/View/viewPriority.js"></script>
+    <script src="./js/View/viewCategory.js"></script>
     <script src="./js/router.js"></script>
     <script src="./js/model.js"></script>
     <script>
+        new homeController();
+
         const task = document.querySelector("#icon-plus")
         task.addEventListener("click", () => {
+            console.log('home');
                 new Router().goTo("task");
         });
         

@@ -9,7 +9,7 @@ class viewTask {
             <section class="container-task color-navigation d-flex justify-content-center align-items-center">
                 <div class="corpoTask position-fixed color-navigation w-100 container d-flex flex-column rounded-2">
                     <p id="Add-Task-Name" class="text-white text-start fw-bold my-3  mx-3 ">Add Task</p>
-                <form class="d-flex flex-column" action = 'http://localhost:3000/todo' METHOD = "POST">
+                <form id="add-todo" class="d-flex flex-column" action='' >
                     <input class="name-task color-navigation h-1 rounded-1 fw-2 px-3 py-2 mx-3 mb-2 text-white fw-normal" type="text" placeholder="Title" spellcheck="false">
                     <input class="description-task color-navigation h-1 rounded-1 fw-2 px-3 py-2 mx-3 mt-0 mb-3 text-white fw-normal" type="text" placeholder="Description" spellcheck="false">
                     <div class="icons  d-flex flex-row justify-content-between position-relative w-50">

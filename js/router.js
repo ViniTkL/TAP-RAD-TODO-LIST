@@ -2,13 +2,13 @@ class Router {
     constructor(){
       this.rotas = {
         'home': "homeController",
-        'task': "viewTask",
+        'task': "taskController",
         'priority' : "priorityController",
         'category': "categoryController"
       }
     }
       
-      goTo(rota) {
+      goTo( rota) {
         history.pushState({}, '', rota);
         eval(`new ${this.rotas[rota]}()`)
       }

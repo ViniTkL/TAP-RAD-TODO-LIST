@@ -10,7 +10,7 @@ class viewPriority{
         </div>
     
         <div class="priority-degree d-flex align-items-center flex-row flex-wrap gap-2 p-2 w-100">
-            <button value="1" class="priority background-priority rounded-2">
+            <button value="1"  class="priority background-priority rounded-2">
                 <i class="bi bi-flag text-white"></i>
                 <p class="text-white">1</p>
             </button>
@@ -54,7 +54,7 @@ class viewPriority{
 
         <div class="btns-priority d-flex justify-content-around align-items-center gap-3">
             <button id="cancel" class="btn btn-primary w-100 h-100 bg-transparent rounded-0 text-white border-0">Cancel</button>
-            <button class="btn btn-primary w-100 h-100 rounded-0 text-white rounded-1">Save</button>
+            <button id="save-pri" class="btn btn-primary w-100 h-100 rounded-0 text-white rounded-1">Save</button>
         </div>
 
         <style>

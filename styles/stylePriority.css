@@ -1,3 +1,7 @@
+#priority-container{
+    z-index: 1;
+}
+
 #priority{
     width: 327px;
     height: 360px;
@@ -28,3 +32,8 @@
 .priority:focus{
     background-color: rgba(134, 135, 231, 1);
 }
+
+/* .priority-degree > button {
+    width: 15%;
+    height: 15%;
+} */

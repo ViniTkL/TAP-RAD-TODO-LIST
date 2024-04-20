@@ -1,6 +1,6 @@
 class categoryController{
     constructor(){
-        this.categoryScreen = document.querySelector("#task")
+        this.categoryScreen = document.querySelector("#categorie-container")
         this.init()
     }
 

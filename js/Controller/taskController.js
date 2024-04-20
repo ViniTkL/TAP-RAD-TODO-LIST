@@ -1,7 +1,8 @@
 class taskController{
     constructor(){
+
         
-        this.View = new viewTask()
+        this.View = new viewTask();
         
         this.toDosModel = new model();
         
@@ -9,17 +10,21 @@ class taskController{
         
         this.homeWithTodos = document.querySelector('#tasks-criadas')
         
-        this.ButtonAddTask = document.querySelector("#icon-plus")
+        this.formAddTask = document.querySelector("#add-todo");
         
-        this.AddTask = document.querySelector("#icon-plus")
+        this.AddTask = document.querySelector("#task");
         
+        this.showTask()
+        
+        this.buttonAddTask = document.querySelector("#send-task");
+
         this.toDoList = document.querySelector(".toDo-list")
         
         this.toDoDoneList = document.querySelector(".toDo-list-done")
         
-        this.showTask()
         
-        // this.showTodosCreatedBefore();
+        
+        this.showTodosCreatedBefore();
         
         this.drag()
 
@@ -60,13 +65,49 @@ class taskController{
 
     
     showTask(){
-        this.ButtonAddTask.addEventListener("click", () =>{
 
-            new Router().goTo("task")
+        
+        this.AddTask.innerHTML += this.View.render();
 
-            // this.closeTask()
+        // this.buttonAddTask.addEventListener("submit", (e) => {
+        //     e.preventDefault()
+        // });
 
-        })    
+        document.querySelector("#select-priority").addEventListener("click", () => {
+            
+            document.querySelector("#add-todo").addEventListener("submit", (e) => {
+                e.preventDefault();
+            });
+            
+            new Router().goTo("priority");
+        });
+
+        document.querySelector("#select-category").addEventListener("click", () => {
+            
+            document.querySelector("#add-todo").addEventListener("submit", (e) => {
+                e.preventDefault();
+            });
+
+            new Router().goTo("category");
+        });
+
+       document.querySelector("#send-task").addEventListener("click", () => {
+
+            document.querySelector("#add-todo").addEventListener("submit", (e) => {
+                e.preventDefault();
+            });
+
+            this.closeTask();
+        })
+        // this.ButtonAddTask.addEventListener("click", () =>{
+
+        //     console.log('sexo');
+
+        //     // new Router().goTo("task")
+
+        //     // this.closeTask()
+
+        // })    
     }
 
     closeTask(){

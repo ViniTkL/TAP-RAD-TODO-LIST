@@ -1,5 +1,42 @@
 class model{
-    constructor(){}
+    constructor(){
+        this.title = '';
+        this.description = '';
+        this.priority = '';
+        this.categorie = 0;
+    }
+
+    setTitle(newTitle){
+        this.title = newTitle;
+    }
+
+    setDescription(newDesc){
+        this.title = newDesc;
+    }
+
+    setPriority(newPrio){
+        this.title = newPrio;
+    }
+
+    setCategorie(newCat){
+        this.title = newCat;
+    }
+
+    getTitle(){
+        return this.title;
+    }
+
+    getDescription(){
+        return this.description;
+    }
+
+    getPriority(){
+        return this.priority;
+    }
+
+    getCategorie(){
+        return this.categorie;
+    }
 
     createToDo(){
         const title =  document.querySelector(".name-task").value
