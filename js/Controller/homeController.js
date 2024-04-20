@@ -1,10 +1,16 @@
 class homeController{
     constructor(){
+        this.View = new viewTask();
+
         this.toDosModel = new model();        
 
         this.homeEmpty = document.querySelector('#info-meio')
         
         this.homeWithTodos = document.querySelector('#tasks-criadas')
+
+        this.toDoList = document.querySelector(".toDo-list")
+        
+        this.toDoDoneList = document.querySelector(".toDo-list-done")
 
         this.showTodosCreatedBefore();
 

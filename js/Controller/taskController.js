@@ -14,64 +14,23 @@ class taskController{
         
         this.AddTask = document.querySelector("#task");
         
-        this.showTask()
         
         this.buttonAddTask = document.querySelector("#send-task");
-
+        
         this.toDoList = document.querySelector(".toDo-list")
         
         this.toDoDoneList = document.querySelector(".toDo-list-done")
-        
-        
+         
+        this.showTask()
         
         this.showTodosCreatedBefore();
         
         this.drag()
-
-
-    // const task = document.querySelector("#icon-plus")
-    //     task.addEventListener("click", () => {
-    //             new Router().goTo("task")
-    //     });
         
     } 
-    
-    async showTodosCreatedBefore(){
-        const todosCreated = await this.getTodos();    
-        console.log('todosCreated', todosCreated);   
         
-        if(todosCreated.length){
-            console.log('não aplica vazio');
-            todosCreated.forEach(toDo => {
-                const {title, description, priority, categorie, done, date, hour, _id} = toDo;
-                const dayCreated = this.formatToDoDate(date);
-                
-                this.toggleHomes();
-                
-                this.createToDoListDay({title, description, priority, categorie, done, dayCreated, hour, _id});                
-            });
-            
-        }else{
-            this.homeWithTodos.classList.add('vazio');
-        }
-        
-    }
-
-    async getTodos(){
-        const toDos = await this.toDosModel.init()
-
-        return toDos;
-    }
-
-    
     showTask(){
-
-        
         this.AddTask.innerHTML += this.View.render();
-
-        // this.buttonAddTask.addEventListener("submit", (e) => {
-        //     e.preventDefault()
-        // });
 
         document.querySelector("#select-priority").addEventListener("click", () => {
             
@@ -98,16 +57,7 @@ class taskController{
             });
 
             this.closeTask();
-        })
-        // this.ButtonAddTask.addEventListener("click", () =>{
-
-        //     console.log('sexo');
-
-        //     // new Router().goTo("task")
-
-        //     // this.closeTask()
-
-        // })    
+        }) 
     }
 
     closeTask(){
@@ -124,7 +74,10 @@ class taskController{
             this.toggleHomes()
             
             this.AddTask.innerHTML = ""
-            
+
+            new Router().goTo("/");
+
+            location.reload();
         })
 
     }
