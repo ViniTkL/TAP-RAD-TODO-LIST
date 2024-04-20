@@ -14,17 +14,10 @@ class categoryController{
         const addCategory = document.querySelector("#btn-add-category");
         const createNewCategory = document.querySelector("#create-new-category");
 
-        console.log(categories);
-
         categories.forEach(categorie => {
             categorie.addEventListener("click", (e) => {
                 const button = document.querySelector('button')
                 const icon = button.querySelector('i')
-                console.log(e);
-                console.log('id', categorie.id);
-                console.log('btn', button );
-                console.log('lista de classe btn', button.classList);
-                console.log('icon', icon);
             })
         });
 
