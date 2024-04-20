@@ -15,6 +15,8 @@ class homeController{
         this.showTodosCreatedBefore();
 
         this.drag();
+
+        console.log('home chamada');
     }
 
     async showTodosCreatedBefore(){

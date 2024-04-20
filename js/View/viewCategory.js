@@ -43,4 +43,74 @@ class viewCategory {
     </section>
         `
     }
+
+    renderChooseCategory(){
+        return`
+        <section id="choose-category" class="container d-flex flex-column rounded-1">
+        <div class="title-choose-category d-flex align-items-center justify-content-center w-100 text-center mb-3">
+            <p class="text-white">Choose Category</p>
+        </div>
+        <div id="categorys" class="categorys d-flex flex-wrap justify-content-start gap-4" >
+            <div id="grocery" class="categoria categoria-btn d-flex flex-column text-center ">
+                <button class="border-0 rounded-1" style="background: rgba(204, 255, 128, 1)"><i class="bi bi-basket fs-1" style="color: rgba(33, 163, 0, 1);"></i></button>
+                <p>Grocery</p>
+            </div>
+            <div id="work" class="categoria categoria-btn d-flex flex-column text-center">
+                <button class="color-yellow border-0 rounded-1" style="background: rgba(255, 150, 128, 1);"><i class="bi bi-briefcase fs-1" style="color: rgba(163, 29, 0, 1)"></i></button>
+                <p>Work</p> 
+            </div>
+            
+            
+            <div id="sport" class="categoria categoria-btn d-flex flex-column text-center">
+                <button class="color-yellow border-0 rounded-1" style="background: rgba(128, 255, 255, 1);"><i class="bi bi-bicycle fs-1" style="color: rgba(0, 163, 47, 1);"></i></button>
+                <p class="">Sport</p>
+            </div>
+            
+            <div id="design" class="categoria categoria-btn d-flex flex-column text-center">
+                <button class="color-yellow border-0 rounded-1" style="background: rgba(128, 255, 217, 1);"><i class="bi bi-vector-pen fs-1" style="color:rgba(0, 163, 114, 1);"></i></button>
+                <p>Design</p>
+            </div>
+            
+            <div id="university" class="categoria categoria-btn d-flex flex-column text-center">
+                <button class="color-yellow border-0 rounded-1" style="background: rgba(128, 156, 255, 1);"><i class="bi bi-book fs-1" style="color: rgba(0, 85, 163, 1);"></i></button>
+                <p>University</p>
+            </div>
+            
+            <div id="social" class="categoria categoria-btn d-flex flex-column text-center">
+                <button class="color-yellow border-0 rounded-1" style="background: rgba(255, 128, 235, 1);"><i class="bi bi-megaphone fs-1" style="color: rgba(163, 0, 137, 1);"></i></button>
+                <p>Social</p>
+            </div>
+            
+            <div id="music" class="categoria categoria-btn d-flex flex-column text-center">
+                <button class="color-yellow border-0 rounded-1" style="background: rgba(252, 128, 255, 1);"><i class="bi bi-music-note-beamed fs-1" style="color: rgba(160, 0, 163, 1);"></i></button>
+                <p>Music</p>
+            </div>
+            
+            <div id="health" class="categoria categoria-btn d-flex flex-column text-center">
+                <button class="color-yellow border-0 rounded-1" style="background: rgba(128, 255, 163, 1);"><i class="bi bi-heart-pulse fs-1" style="color: rgba(0, 163, 163, 1);"></i></button>
+                <p>Health</p>
+            </div>
+            
+            <div id="movie" class="categoria categoria-btn d-flex flex-column text-center">
+                <button class="color-yellow border-0 rounded-1" style="background: rgba(128, 209, 255, 1);"><i class="bi bi-camera-video fs-1" style="color: rgba(0, 105, 163, 1);"></i></button>
+                <p>Movie</p>
+            </div>
+            
+            <div id="home" class="categoria categoria-btn d-flex flex-column text-center">
+                <button class="color-yellow border-0 rounded-1" style="background: rgba(255, 204, 128, 1);"><i class="bi bi-house fs-1" style="color: rgba(163, 98, 0, 1);"></i></button>
+                <p>Home</p>
+            </div>
+            
+            <div id="create-new-category" class="categoria d-flex flex-column text-center pb-2">
+                <button class="color-yellow border-0 rounded-1" style="background: rgba(128, 255, 209, 1);"><i class="bi bi-plus-lg fs-1" style="color:rgba(0, 163, 105, 1);"></i></button>
+                <p class="">Create New</p>
+            </div>
+        </div>
+
+        <div class="add-category mt-2">
+            <button id="btn-add-category" class="btn btn-primary w-100" style="height: 48px;">Add Category</button>
+        </div>
+        </section>
+        `
+    }
 }

@@ -14,9 +14,47 @@ html,body{
     overflow: hidden;
 
 }
+#choose-categorie-container{
+    z-index: 1;
+}
+#choose-category{
+    width: 327px;
+    height: 556px;
+    background: #363636;
+    
+}
+.title-choose-category{
+    height: 40px;
+    border-bottom: 1px solid rgba(151, 151, 151, 1);
+}
+.title-choose-category > p{
+    margin: 0;
+}
+.categorys{
+    padding-left: 30px;
+}
+.categoria{
+    height: 90px;
+}
+.categorys button{
+    width: 64px;
+    min-height: 64px;
+}
+.categorys .categoria p{
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21.07px;
+    text-align: center;
+    color: aliceblue;
+}
+#categorie-container{
+    height: 100%;
+}
 #category{
     overflow-x: hidden;
     overflow-y: hidden;
+    margin-bottom: 80%;
 }
 #input-name-category{
     height: 48px;
@@ -26,6 +64,10 @@ html,body{
 
 #input-name-category::placeholder{color: rgba(175, 175, 175, 1);}
 
+#categorie-container.categorie-empty{
+    height: 0;
+}
+
 .colors{
     overflow-x: scroll;
     height: 50px;
@@ -34,7 +76,11 @@ html,body{
 ::-webkit-scrollbar{
     display: none;
 }
-#btn-category-icons{background-color: rgba(54, 54, 54, 1)}
+#btn-category-icons{
+    background-color: rgba(54, 54, 54, 1);
+    width: fit-content;
+    height: auto;
+}
 
 .btn-category-colors{
     min-width: 36px;
@@ -50,6 +96,7 @@ html,body{
     bottom: 0;
 }
 .btn-create-cancel{
+    margin-bottom: 30px;
     padding-right: 30px;
 }
 .btn-create-cancel .btn{
