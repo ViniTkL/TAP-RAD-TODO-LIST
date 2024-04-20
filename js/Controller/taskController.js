@@ -5,6 +5,8 @@ class taskController{
         this.View = new viewTask();
         
         this.toDosModel = new model();
+
+        this.categoryModel = new modelCategory(); 
         
         this.homeEmpty = document.querySelector('#info-meio')
         
@@ -49,7 +51,9 @@ class taskController{
                 e.preventDefault();
             });
 
-            new Router().goTo("category");           
+            new Router().goTo("category");  
+            
+            this.getCategorieValues();
         });
 
         this.buttonAddTask.addEventListener("click", () => {
@@ -69,7 +73,6 @@ class taskController{
 
     closeTask(){
 
-        console.info('chamou');
 
         //Tratar e salvar os dados aqui antes de excluir a task 
         
@@ -96,24 +99,41 @@ class taskController{
              });
     }
 
+    getCategorieValues(){
+        const categories = document.querySelectorAll(".categoria-btn");
+        categories.forEach(categorie => {
+            categorie.addEventListener("click", (e) => {
+                const button = categorie.querySelector('button')
+                const icon = button.querySelector('i')
+                this.categoryModel.setName(categorie.id)
+                this.categoryModel.setIcon(icon.classList[1]);
+            })
+        });
+    }
+
     createToDo(){
             const title =  document.querySelector(".name-task").value
             const description = document.querySelector(".description-task").value
             const hour = this.hourFormat(new Date());
             const date = new Date();
             const dayCreated = this.formatToDoDate(date); 
-            const priority = this.toDosModel.getPriority() // depois pegar do HTML
-            const categorie = 'teste' // depois pegar do HTML 
+            const priority = this.toDosModel.getPriority() 
+            const categorie = {
+                name: this.categoryModel.getName(),
+                icon: this.categoryModel.getIcon(),
+                color: this.categoryModel.getColor(),
+            }
             const done = false;
+            const icon = this.categoryModel.getIcon();
 
             this.toDosModel.save({title, description, priority, categorie, done, date, hour})
-
-            return {title, description, priority, categorie, done, dayCreated, hour}
-
+            
+            
+            return {title, description, priority, categorie, done, dayCreated, hour, icon}
     }
     
     createToDoListDay(toDoCreated){
-        const {title, description, priority, categorie, done, dayCreated, hour} = toDoCreated
+        const {title, description, priority, categorie, done, dayCreated, hour, icon} = toDoCreated
         const toDoLists = document.querySelectorAll('.toDo-list')
         let alreadyExists = false
         

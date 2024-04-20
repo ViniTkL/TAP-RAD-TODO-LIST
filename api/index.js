@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const ToDo = require("./modelos/todo")
+const Categorie = require("./modelos/categories")
 const cors = require("cors")
 
 const setup = async () => {
@@ -53,6 +54,16 @@ const setup = async () => {
 
     })
     
+
+    server.post('/category', (req, res) => {
+        const {name, icon, color} = req.body;
+
+        const category = new Categorie({name, icon, color});
+
+        category.save();
+
+        res.status(200).send(category)
+    })
     
     
     server.listen(3000)
