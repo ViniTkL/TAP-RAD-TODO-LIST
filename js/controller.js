@@ -27,10 +27,8 @@ constructor(){
 
 async showTodosCreatedBefore(){
     const todosCreated = await this.getTodos();    
-    console.log('todosCreated', todosCreated);   
     
     if(todosCreated.length){
-        console.log('não aplica vazio');
         todosCreated.forEach(toDo => {
             const {title, description, priority, categorie, done, date, hour, _id} = toDo;
             const dayCreated = this.formatToDoDate(date);
@@ -175,7 +173,6 @@ drag(){
         applyAfter.insertAdjacentElement("beforeend", dragging);
         } else {
         item.append(dragging);
-        console.log('hwfhseifh');
         }            
     });
     });

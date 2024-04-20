@@ -10,20 +10,12 @@ class categoryController{
         const view = new viewCategory();
         this.chooseCategoryScreen.innerHTML += view.renderChooseCategory();
 
-        const categories = document.querySelectorAll(".categoria-btn");
         const addCategory = document.querySelector("#btn-add-category");
         const createNewCategory = document.querySelector("#create-new-category");
 
-        categories.forEach(categorie => {
-            categorie.addEventListener("click", (e) => {
-                const button = document.querySelector('button')
-                const icon = button.querySelector('i')
-            })
-        });
+       
 
         addCategory.addEventListener("click", () => {
-
-            
             this.closeTab();
         });
 
@@ -36,16 +28,13 @@ class categoryController{
             const salvar = document.querySelector("#btn-create");
 
             salvar.addEventListener("click", () =>{
-                this.chooseCategoryScreen.classList.remove('vazio')     
-                this.categoryScreen.innerHTML = '';
+                this.closeNewCategoryTab();
             });
     
            cancelar.addEventListener("click", () => {
-               this.chooseCategoryScreen.classList.remove('vazio')     
-                this.categoryScreen.innerHTML = '';
+            this.closeNewCategoryTab();
            });
         })
-
     }
 
     toggleOptions(){
@@ -60,4 +49,8 @@ class categoryController{
         history.go(-1);
     }
 
+    closeNewCategoryTab(){
+        this.chooseCategoryScreen.classList.remove('vazio')     
+        this.categoryScreen.innerHTML = '';
+    }
 }

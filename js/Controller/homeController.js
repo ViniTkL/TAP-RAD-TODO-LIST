@@ -23,11 +23,12 @@ class homeController{
         if(todosCreated.length){
             todosCreated.forEach(toDo => {
                 const {title, description, priority, categorie, done, date, hour, _id} = toDo;
+                const {name, icon, color} = categorie[0]
                 const dayCreated = this.formatToDoDate(date);
                 
                 this.toggleHomes();
                 
-                this.createToDoListDay({title, description, priority, categorie, done, dayCreated, hour, _id});                
+                this.createToDoListDay({title, description, priority, name, done, dayCreated, hour, _id, icon});                
             });
             
         }else{
@@ -43,7 +44,9 @@ class homeController{
     }
 
     createToDoListDay(toDoCreated){
-        const {title, description, priority, categorie, done, dayCreated, hour} = toDoCreated
+        const {title, description, priority, name, done, dayCreated, hour, icon} = toDoCreated
+        console.log(toDoCreated);
+
         const toDoLists = document.querySelectorAll('.toDo-list')
         let alreadyExists = false
         
@@ -58,10 +61,10 @@ class homeController{
         toDo.done ? this.whereToRender(toDo) : this.toDoList.innerHTML += this.View.renderToDoList(toDo.dayCreated) + this.View.renderToDO(toDo)
     }
     
-    whereToRender({title, description, priority, categorie, done, dayCreated, hour, _id}){
+    whereToRender({title, description, priority, name, done, dayCreated, hour, _id, icon}){
         done ? 
-        this.toDoDoneList.innerHTML += this.View.renderToDO({title, description, priority, categorie, done, dayCreated, hour, _id})
-        :  this.insertElement(document.querySelector(`.toDo-list .${dayCreated}`), {title, description, priority, categorie, done, dayCreated, hour, _id})   
+        this.toDoDoneList.innerHTML += this.View.renderToDO({title, description, priority, name, done, dayCreated, hour, _id, icon})
+        :  this.insertElement(document.querySelector(`.toDo-list .${dayCreated}`), {title, description, priority, name, done, dayCreated, hour, _id, icon})   
     }
 
     insertElement(fatherElement, toDo){
