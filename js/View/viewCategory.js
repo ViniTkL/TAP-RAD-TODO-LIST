@@ -46,12 +46,6 @@ class viewCategory {
 
     renderChooseCategory(){
         return`
-        <section id="choose-category" class="container d-flex flex-column rounded-1">
-        <div class="title-choose-category d-flex align-items-center justify-content-center w-100 text-center mb-3">
-            <p class="text-white">Choose Category</p>
-        </div>
-        <div class="d-flex flex-wrap justify-content-start gap-4">
-            <div id="categorys" class="categorys d-flex flex-wrap justify-content-start gap-4" >
                 <div id="grocery" class="categoria categoria-btn d-flex flex-column text-center ">
                     <button class="border-0 rounded-1 grocery-color"><i class="bi bi-basket fs-1"></i></button>
                     <p>Grocery</p>
@@ -102,20 +96,14 @@ class viewCategory {
                     <button class="border-0 rounded-1 home-color"><i class="bi bi-house fs-1"></i></button>
                     <p>Home</p>
                 </div>
-            </div>
                 
                 <div id="create-new-category" class="categoria d-flex flex-column text-center pb-2">
                     <button class="border-0 rounded-1" style="background: rgba(128, 255, 209, 1);"><i class="bi bi-plus-lg fs-1" style="color:rgba(0, 163, 105, 1);"></i></button>
                     <p class="">Create New</p>
-                </div>
-        </div>
-            
-        <div class="add-category mt-2">
-            <button id="btn-add-category" class="btn btn-primary w-100" style="height: 48px;">Add Category</button>
-        </div>
-        </section>
-        `
+                </div>`
     }
+
+    
 
     renderNewCategory({name, icon, color}){
         return`

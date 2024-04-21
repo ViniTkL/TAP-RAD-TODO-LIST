@@ -43,4 +43,13 @@ class modelCategory{
         .catch(err => console.error(err));
     }
 
+    async init(){
+        const categoriesList = await fetch('http://localhost:3000/categories')
+            .then(result => result.json())
+            .then( result2 => {return result2})
+            .catch(err => console.error(err));
+        
+        return categoriesList
+    }
+
 }

@@ -19,7 +19,7 @@ html,body{
 }
 #choose-category{
     width: 327px;
-    height: 556px;
+    height: fit-content;
     background: #363636;
     
 }
@@ -81,14 +81,6 @@ html,body{
     width: fit-content;
     height: auto;
 }
-
-#create-new-category{
-    display: flex;
-    position: absolute;
-    bottom: 20%;
-    left: 40%;
-}
-
 .btn-category-colors{
     min-width: 36px;
     height: 36px;

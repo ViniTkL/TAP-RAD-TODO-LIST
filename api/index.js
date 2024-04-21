@@ -64,6 +64,11 @@ const setup = async () => {
 
         res.status(200).send(category)
     })
+
+    server.get("/categories", async (req, res) => {
+        const categories = await Categorie.find({});
+        res.send(categories)
+    })
     
     
     server.listen(3000)
