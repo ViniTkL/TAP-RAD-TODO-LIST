@@ -154,7 +154,6 @@
 .toDo-tag{
     display: flex;
     border-radius: 4px;
-    background-color: #9741CC;
     padding: 5px 10px 5px 10px;
     gap: 5px;
 }

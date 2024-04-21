@@ -14,7 +14,7 @@ class modelCategory{
     }
 
     setColor(newColor){
-        this.newColor = newColor;
+        this.color = newColor;
     }
 
     getName(){

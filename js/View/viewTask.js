@@ -52,7 +52,7 @@ class viewTask {
 
     }
 
-    renderToDO({title, priority, name, dayCreated, hour, _id, icon}){
+    renderToDO({title, priority, name, dayCreated, hour, _id, icon, color}){
         return`
         <div class="toDo" draggable="true" id="${_id}">
             <div class="toDo-body">
@@ -63,7 +63,7 @@ class viewTask {
                 </div>
             </div>
             <div class="toDo-classification">
-                <div class="toDo-tag">
+                <div class="toDo-tag ${color}">
                     <i class="bi ${icon}"></i>
                     <p>${name}</p>
                 </div>

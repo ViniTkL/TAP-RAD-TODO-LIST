@@ -1,7 +1,10 @@
 class categoryController{
     constructor(){
+        this.view = new viewCategory();
+        this.categorModel = new modelCategory();
         this.categoryScreen = document.querySelector("#categorie-container");
         this.chooseCategoryScreen = document.querySelector("#choose-categorie-container");
+        this.parser = new DOMParser();
         this.init()
         this.toggleOptions();
     }
@@ -27,7 +30,10 @@ class categoryController{
             const cancelar = document.querySelector("#btn-cancel");
             const salvar = document.querySelector("#btn-create");
 
+            this.selectColorCategory();
+
             salvar.addEventListener("click", () =>{
+                this.createCategory();
                 this.closeNewCategoryTab();
             });
     
@@ -52,5 +58,28 @@ class categoryController{
     closeNewCategoryTab(){
         this.chooseCategoryScreen.classList.remove('vazio')     
         this.categoryScreen.innerHTML = '';
+    }
+
+    createCategory(){
+        let categoriesContainer = document.querySelector('#categorys');
+        this.categorModel.setIcon('bi-basket');
+        this.categorModel.setName(document.querySelector('#input-name-category').value);
+        const newCategory = this.view.renderNewCategory({name: this.categorModel.getName(),icon:this.categorModel.getIcon(), color: this.categorModel.getColor()})
+        
+        categoriesContainer.innerHTML += newCategory;
+
+        this.categorModel.save()
+        console.log(this.categorModel.getName());
+        console.log('cor',this.categorModel.getColor());
+    }
+    
+    selectColorCategory(){
+        const colors = document.querySelectorAll('.btn-category-colors');
+
+        colors.forEach(color => {
+            color.addEventListener('click', () => {
+                this.categorModel.setColor(color.classList[2])
+            })
+        })
     }
 }

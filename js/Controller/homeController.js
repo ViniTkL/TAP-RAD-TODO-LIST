@@ -28,7 +28,7 @@ class homeController{
                 
                 this.toggleHomes();
                 
-                this.createToDoListDay({title, description, priority, name, done, dayCreated, hour, _id, icon});                
+                this.createToDoListDay({title, description, priority, name, done, dayCreated, hour, _id, icon, color});                
             });
             
         }else{
@@ -44,7 +44,7 @@ class homeController{
     }
 
     createToDoListDay(toDoCreated){
-        const {title, description, priority, name, done, dayCreated, hour, icon} = toDoCreated
+        const {title, description, priority, name, done, dayCreated, hour, icon, color} = toDoCreated
         console.log(toDoCreated);
 
         const toDoLists = document.querySelectorAll('.toDo-list')
@@ -61,10 +61,10 @@ class homeController{
         toDo.done ? this.whereToRender(toDo) : this.toDoList.innerHTML += this.View.renderToDoList(toDo.dayCreated) + this.View.renderToDO(toDo)
     }
     
-    whereToRender({title, description, priority, name, done, dayCreated, hour, _id, icon}){
+    whereToRender({title, description, priority, name, done, dayCreated, hour, _id, icon, color}){
         done ? 
-        this.toDoDoneList.innerHTML += this.View.renderToDO({title, description, priority, name, done, dayCreated, hour, _id, icon})
-        :  this.insertElement(document.querySelector(`.toDo-list .${dayCreated}`), {title, description, priority, name, done, dayCreated, hour, _id, icon})   
+        this.toDoDoneList.innerHTML += this.View.renderToDO({title, description, priority, name, done, dayCreated, hour, _id, icon, color})
+        :  this.insertElement(document.querySelector(`.toDo-list .${dayCreated}`), {title, description, priority, name, done, dayCreated, hour, _id, icon, color})   
     }
 
     insertElement(fatherElement, toDo){
