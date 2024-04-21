@@ -41,8 +41,11 @@ class categoryController{
     }
 
     async createCategory(){
-        this.categorModel.setIcon('bi-basket');
+        const iconSelection = document.querySelector('#select-icon');
+        const iconSelected = iconSelection.options[iconSelection.selectedIndex].value
+        this.categorModel.setIcon(iconSelected);
         this.categorModel.setName(document.querySelector('#input-name-category').value);
+
         const newCategorie = this.view.renderNewCategory({name: this.categorModel.getName(),icon:this.categorModel.getIcon(), color: this.categorModel.getColor()})
         
         this.categorModel.save()

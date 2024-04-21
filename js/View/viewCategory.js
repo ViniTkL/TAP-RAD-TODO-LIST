@@ -17,7 +17,19 @@ class viewCategory {
             <div id="category-icon" class="mt-3">
                 <label class="fs-6 text-white fw-normal pb-3" for="btn-category">Category icon:</label>
                 <br>
-                <button id="btn-category-icons" type="button" class="btn btn-secondary text-white border-0 fw-normal" style="font-size: 12px;">Choose icon from library</button>
+                <select class="text-white border-0 fw-normal" name="category-icon" id="select-icon">
+                    <option>Choose icon from library</option>
+                    <option value="bi-basket">Mercado</option>
+                    <option value="bi-briefcase">Trabalho</option>
+                    <option value="bi-bicycle">Esportes</option>
+                    <option value="bi-vector-pen">Desenho</option>
+                    <option value="bi-book">Estudos</option>
+                    <option value="bi-music-note-beamed">Musical</option>
+                    <option value="bi-camera-video">Entretenimento</option>
+                    <option value="bi-house">Doméstico</option>
+                    <option value="bi-heart-pulse">Saúde</option>
+                    <option value="bi-megaphone">Social</option>
+                </select>
             </div>
 
             <div id="category-colors" class="mt-3">
