@@ -97,19 +97,24 @@ class viewCategory {
                     <p>Home</p>
                 </div>
                 
-                <div id="create-new-category" class="categoria d-flex flex-column text-center pb-2">
-                    <button class="border-0 rounded-1" style="background: rgba(128, 255, 209, 1);"><i class="bi bi-plus-lg fs-1" style="color:rgba(0, 163, 105, 1);"></i></button>
-                    <p class="">Create New</p>
-                </div>`
+                
+            `
     }
-
-    
 
     renderNewCategory({name, icon, color}){
         return`
         <div id="${name}" class="categoria categoria-btn d-flex flex-column text-center">
             <button class="border-0 rounded-1 ${color}"><i class="bi ${icon} fs-1"></i></button>
             <p>${name}</p>
+        </div>
+        `
+    }
+
+    renderButtonCreate(){
+        return`
+        <div id="create-new-category" class="categoria d-flex flex-column text-center pb-2">
+            <button class="border-0 rounded-1" style="background: rgba(128, 255, 209, 1);"><i class="bi bi-plus-lg fs-1" style="color:rgba(0, 163, 105, 1);"></i></button>
+            <p class="">Create New</p>
         </div>
         `
     }

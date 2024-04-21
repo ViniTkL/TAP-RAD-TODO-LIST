@@ -40,14 +40,14 @@ class categoryController{
         this.categoryScreen.innerHTML = '';
     }
 
-    createCategory(){
+    async createCategory(){
         this.categorModel.setIcon('bi-basket');
         this.categorModel.setName(document.querySelector('#input-name-category').value);
-        const newCategory = this.view.renderNewCategory({name: this.categorModel.getName(),icon:this.categorModel.getIcon(), color: this.categorModel.getColor()})
+        const newCategorie = this.view.renderNewCategory({name: this.categorModel.getName(),icon:this.categorModel.getIcon(), color: this.categorModel.getColor()})
         
-        this.categoriesContainer.innerHTML += newCategory;
-
         this.categorModel.save()
+        
+        this.categoriesContainer.innerHTML += newCategorie; 
 
         this.addEventToCreateNew();
     }
@@ -70,6 +70,7 @@ class categoryController{
                 this.categoriesContainer.innerHTML += this.view.renderNewCategory(category)
             });
         }
+        this.categoriesContainer.innerHTML += this.view.renderButtonCreate();
         this.addEventToCreateNew();
     }
 
@@ -101,4 +102,5 @@ class categoryController{
            });
         })
     }
+    
 }

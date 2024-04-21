@@ -16,12 +16,12 @@ html,body{
 }
 #choose-categorie-container{
     z-index: 1;
+
 }
 #choose-category{
     width: 327px;
     height: fit-content;
     background: #363636;
-    
 }
 .title-choose-category{
     height: 40px;
