@@ -1,7 +1,7 @@
-const express = require("express")
 const mongoose = require("mongoose")
-const Task = require("./modelos/task")
-
+const ToDo = require("./modelos/todo")
+const Categorie = require("./modelos/categories")
+const cors = require("cors")
 
 const setup = async () => {
     await mongoose.connect("mongodb://127.0.0.1:27017/toDoTasks")
@@ -9,14 +9,15 @@ const setup = async () => {
     const express = require("express")
     const server = express()
 
+    server.use(cors())
     server.use(express.json())
 
-    server.get("/tasks", async (req, res) => {
-        const tasks = await Task.find({})
-        res.send(tasks)
+    server.get("/todos", async (req, res) => {
+        const todos = await ToDo.find({})
+        res.send(todos)
     })
 
-    server.post("/task", (req, res) => {
+    server.post("/todo", (req, res) => {
         const {
             title,
             description,
@@ -27,7 +28,7 @@ const setup = async () => {
             hour
         } = req.body
         
-        const task = new Task({
+        const todo = new ToDo({
             title,
             description,
             priority,
@@ -37,12 +38,37 @@ const setup = async () => {
             hour
         })
 
-        task.save()
-        res.status(200).send(task)
+        todo.save()
+        res.status(200).send(todo)
 
     })
-
     
+    server.put('/todo', async (req, res) => {
+        const {_id} = req.body;
+
+       const toDoUpdated =  await ToDo.findByIdAndUpdate(_id, {done: true}, {
+            new: true
+        })
+
+        res.status(200).send(toDoUpdated)
+
+    })
+    
+
+    server.post('/category', (req, res) => {
+        const {name, icon, color} = req.body;
+
+        const category = new Categorie({name, icon, color});
+
+        category.save();
+
+        res.status(200).send(category)
+    })
+
+    server.get("/categories", async (req, res) => {
+        const categories = await Categorie.find({});
+        res.send(categories)
+    })
     
     
     server.listen(3000)

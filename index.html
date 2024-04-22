@@ -7,6 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/styleMain.css">
     <link rel="stylesheet" href="./styles/styleAddTask.css">
+    <link rel="stylesheet" href="./styles/stylePriority.css">
+    <link rel="stylesheet" href="./styles/styleCategoria.css">
+    <link rel="stylesheet" href="./styles/styleTasks.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
@@ -38,14 +41,53 @@
             <p>Tap + to add your tasks</p>
         </section>
 
-        <div class="add-priority">
+        <section id="tasks-criadas" class="info-meio tasks">
+            <div class="search-bar">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="search for your task...">
+            </div>
+            <div class="toDo-list">
+               
+            </div>
+            <div class="toDo-list-done">
+                <div class="toDo-day">
+                    <p>
+                        Completados
+                        <i class="bi bi-chevron-compact-down"></i>
+                    </p>
+                </div>
+            </div>
+        </section>
 
+        
+        
+        <div id="priority-container" class="align-items-center justify-content-center"> 
+            
         </div>
 
-        <div class="buttonAdd align-items-center justify-content-center">
-
+        <div id="choose-categorie-container" class="align-items-center justify-content-center categorie-empty vazio"> 
+            <section id="choose-category" class="container d-flex flex-column rounded-1">
+                <div class="title-choose-category d-flex align-items-center justify-content-center w-100 text-center mb-3">
+                    <p class="text-white">Choose Category</p>
+                </div>
+                    <div id="categorys" class="categorys d-flex flex-wrap justify-content-start gap-4" >
+                    
+                    </div>
+                    <div class="add-category mt-2">
+                        <button id="btn-add-category" class="btn btn-primary w-100" style="height: 48px;">Add Category</button>
+                    </div>
+                </section>
         </div>
-
+        
+        <div id="categorie-container" class="align-items-center justify-content-center categorie-empty "> 
+            
+        </div>
+        
+        <div id="task" class="align-items-center justify-content-center"> 
+            
+        </div>
+    
+    
          <!--Menu final (footer) -->
         <nav class="w-100" style="height: 124px;">
             <div class="bottom-navigation color-navigation w-100 d-flex justify-content-between align-items-center px-3 pb-1 position-absolute" style="height: 100px; bottom:0;">
@@ -64,7 +106,7 @@
                 </div>
                         
                       
-                <button type="button" id="icon-plus" class="btn color-blue rounded-circle position-relative d-flex justify-content-center align-items-center ">
+                <button type="button" id="icon-plus" class="btn rounded-circle position-relative d-flex justify-content-center align-items-center color-blue">     
                         <i class="bi bi-plus-lg text-white" style="font-size: 22px;"></i>
                 </button>
 
@@ -87,15 +129,26 @@
         
     </main>
 
-
-    <script src="./js/Controller/controller.js"></script>
-    <script src="./js/View/view.js"></script>
+    <script src="./js/models/modelToDo.js"></script>
+    <script src="./js/models/modelCategory.js"></script>
+    <script src="./js/Controller/taskController.js"></script>
+    <script src="./js/Controller/homeController.js"></script>
+    <script src="./js/Controller/PriorityController.js"></script>
+    <script src="./js/Controller/categoryController.js"></script>
+    <script src="./js/View/viewTask.js"></script>
     <script src="./js/View/viewPriority.js"></script>
+    <script src="./js/View/viewCategory.js"></script>
+    <script src="./js/router.js"></script>
     <script>
-        
-    new controller()
-    </script>
+        new homeController();
 
+        const task = document.querySelector("#icon-plus")
+        task.addEventListener("click", () => {
+                new Router().goTo("task");
+        });
+        
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 1);
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
+
+}
+#choose-categorie-container{
+    z-index: 1;
+
+}
+#choose-category{
+    width: 327px;
+    height: fit-content;
+    background: #363636;
+}
+.title-choose-category{
+    height: 40px;
+    border-bottom: 1px solid rgba(151, 151, 151, 1);
+}
+.title-choose-category > p{
+    margin: 0;
+}
+.categorys{
+    padding-left: 30px;
+}
+.categoria{
+    height: 90px;
+}
+.categorys button{
+    width: 64px;
+    min-height: 64px;
+}
+.categorys .categoria p{
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21.07px;
+    text-align: center;
+    color: aliceblue;
+}
+#categorie-container{
+    height: 100%;
+}
+#category{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-bottom: 80%;
+}
+#input-name-category{
+    height: 48px;
+    background-color: rgba(29, 29, 29, 1);
+    border: 1px solid rgba(151, 151, 151, 1);
+}
+
+#input-name-category::placeholder{color: rgba(175, 175, 175, 1);}
+
+#categorie-container.categorie-empty{
+    height: 0;
+}
+
+.colors{
+    overflow-x: scroll;
+    height: 50px;
+    white-space:nowrap;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+#btn-category-icons{
+    background-color: rgba(54, 54, 54, 1);
+    width: fit-content;
+    height: auto;
+}
+.btn-category-colors{
+    min-width: 36px;
+    height: 36px;
+    border: none;
+}
+.btn-category-colors:focus{
+    border: 2px solid white; 
+}
+
+#save-cancel{
+    position: absolute;
+    bottom: 0;
+}
+.btn-create-cancel{
+    margin-bottom: 30px;
+    padding-right: 30px;
+}
+.btn-create-cancel .btn{
+    width: 50%;
+    height: 48px;  
+}
+.btn-cancel{
+    color: aquamarine;
+}
+.color-yellow{ 
+    background: rgba(201, 204, 65, 1);
+    color: rgba(130, 133, 42, 1);
+}
+.color-green{
+    background: rgba(102, 204, 65, 1);
+    color: rgba(66, 133, 42, 1);
+}
+.color-grennblue{
+    background: rgba(65, 204, 167, 1);
+    color: rgba(42, 133, 109, 1);
+}
+.color-darkblue{
+    background: rgba(65, 129, 204, 1);
+    color: rgba(42, 83, 133, 1);
+}
+.color-lightblue{
+    background: rgba(65, 162, 204, 1);
+    color: rgba(42, 105, 133, 1)
+}
+.color-orange{
+    background: rgba(204, 132, 65, 1);
+    color: rgba(133, 85, 42, 1);
+}
+.color-purple{
+    background: rgba(151, 65, 204, 1);
+    color: rgba(98, 42, 133, 1);
+}
+.color-pink{
+    background: rgba(204, 65, 115, 1);
+    color: rgba(133, 42, 74, 1);
+}
+.color-red{
+    background: rgba(214, 67, 67, 1);
+    color: rgba(139, 43, 43, 1);
+}
+
+.grocery-color{
+    background: rgba(204, 255, 128, 1);
+    color: rgba(33, 163, 0, 1);
+}
+
+.work-color{
+    background: rgba(255, 150, 128, 1);
+    color: rgba(163, 29, 0, 1);
+}
+
+.sport-color{
+    background: rgba(128, 255, 255, 1);
+    color: rgba(0, 163, 47, 1);
+}
+
+.design-color{
+    background: rgba(128, 255, 217, 1);
+    color:rgba(0, 163, 114, 1);
+}
+
+.university-color{
+    background: rgba(128, 156, 255, 1);
+    color: rgba(0, 85, 163, 1);
+}
+
+.social-color{
+    background: rgba(255, 128, 235, 1);
+    color: rgba(163, 0, 137, 1);
+}
+
+.music-color{
+    background: rgba(252, 128, 255, 1);
+    color: rgba(160, 0, 163, 1);
+}
+
+.health-color{
+    background: rgba(128, 255, 163, 1);
+    color: rgba(0, 163, 163, 1);
+}
+
+.movie-color{
+    background: rgba(128, 209, 255, 1);
+    color: rgba(0, 105, 163, 1);
+}
+
+.home-color{
+    background: rgba(255, 204, 128, 1);
+    color: rgba(163, 98, 0, 1);
+}
+
+select{
+    background-color: #363636;
+    height: 32px;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 12px;
+}

@@ -13,6 +13,8 @@
 
 2. Dentro da database **toDoTasks** criaremos a collection **todos** que será onde iremos guardar e salvar os dados das todos criadas na nossa aplicação
 
+3. Também deve ser criardo a collocetion **categories** que será onde iremos guardar as nossas categorias criada
+
 
 ### Utilizando a API
 
