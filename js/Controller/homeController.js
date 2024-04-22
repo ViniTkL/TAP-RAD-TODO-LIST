@@ -175,6 +175,8 @@ class homeController{
             toDosUndone.forEach(item => {
                 item.addEventListener('touchend', (e) => {
                     this.toDosModel.update(e.target.id);
+
+                    this.toDoDoneList.append(e.target)
                 })
             })
 
