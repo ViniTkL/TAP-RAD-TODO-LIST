@@ -1,9 +1,12 @@
-class model{
+class modelToDo{
     constructor(){
         this.title = '';
         this.description = '';
         this.priority = 0;
         this.categorie = '';
+        this.date = '';
+        this.hour='';
+        this.done = false;
     }
 
     setTitle(newTitle){
@@ -22,6 +25,18 @@ class model{
         this.categorie = newCat;
     }
 
+    setDate(newDate){
+        this.date = newDate;
+    }
+
+    setHour(newHour){
+        this.hour = newHour;
+    }
+
+    setDone(newDone){
+        this.done = newDone;
+    }
+
     getTitle(){
         return this.title;
     }
@@ -38,6 +53,18 @@ class model{
         return this.categorie;
     }
 
+    getDate(){
+        return this.date;
+    }
+
+    getHour(){
+        return this.hour;
+    }
+
+    getDone(){
+        return this.done;
+    }
+
      async init(){
         const toDoList = await fetch('http://localhost:3000/todos')
             .then(result => result.json())
@@ -47,7 +74,16 @@ class model{
         return toDoList
     }
 
-     save(newToDo){
+     save(){
+        let newToDo = {
+            'title': this.title,
+            'description': this.description,
+            'priority': this.priority,
+            'categorie': this.categorie,
+            'done': this.done,
+            'date': this.date,
+            'hour': this.hour,
+        }
         fetch('http://localhost:3000/todo', {
             method: 'POST',
             headers: {

@@ -4,7 +4,7 @@ class taskController{
         
         this.View = new viewTask();
         
-        this.toDosModel = new model();
+        this.toDosModel = new modelToDo();
 
         this.categoryModel = new modelCategory(); 
                 
@@ -95,19 +95,19 @@ class taskController{
     }
 
     createToDo(){
-            const title =  document.querySelector(".name-task").value
-            const description = document.querySelector(".description-task").value
-            const hour = this.hourFormat(new Date());
-            const date = new Date();
-            const priority = this.toDosModel.getPriority() 
-            const categorie = {
+            this.toDosModel.setTitle(document.querySelector(".name-task").value);
+            this.toDosModel.setDescription(document.querySelector(".description-task").value);
+            this.toDosModel.setDate(new Date())
+            this.toDosModel.setHour(this.hourFormat(this.toDosModel.getDate()));
+            // const priority = this.toDosModel.getPriority() 
+            this.toDosModel.setCategorie( {
                 name: this.categoryModel.getName(),
                 icon: this.categoryModel.getIcon(),
                 color: this.categoryModel.getColor(),
-            }
-            const done = false;
+            })
+            this.toDosModel.setDone(false)
 
-            this.toDosModel.save({title, description, priority, categorie, done, date, hour})
+            this.toDosModel.save();
     }
     
     hourFormat(date){

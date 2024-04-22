@@ -2,7 +2,7 @@ class homeController{
     constructor(){
         this.View = new viewTask();
 
-        this.toDosModel = new model();        
+        this.toDosModel = new modelToDo();        
 
         this.homeEmpty = document.querySelector('#info-meio')
         
@@ -15,6 +15,8 @@ class homeController{
         this.showTodosCreatedBefore();
 
         this.drag();
+
+        this.touch();
     }
 
     async showTodosCreatedBefore(){
@@ -45,7 +47,6 @@ class homeController{
 
     createToDoListDay(toDoCreated){
         const {title, description, priority, name, done, dayCreated, hour, icon, color} = toDoCreated
-        console.log(toDoCreated);
 
         const toDoLists = document.querySelectorAll('.toDo-list')
         let alreadyExists = false
@@ -102,14 +103,14 @@ class homeController{
 
     drag(){
         const toDosUndone = document.querySelectorAll(".toDo-list");
-        const toDosDone = document.querySelectorAll(".toDo-list-done")
+        const toDosDone = document.querySelectorAll(".toDo-list-done");
 
         document.addEventListener("dragstart", (e) => {
-        e.target.classList.add("dragging");
+            e.target.classList.add("dragging");
         });
 
         document.addEventListener("dragend", (e) => {
-        e.target.classList.remove("dragging");
+             e.target.classList.remove("dragging");
         });
 
         toDosUndone.forEach( item => {
@@ -158,4 +159,26 @@ class homeController{
 
         return result;
         }
+
+        touch(){
+            const toDosUndone = document.querySelectorAll(".toDo-list");
+            const toDosDone = document.querySelectorAll(".toDo-list-done");
+
+            document.addEventListener("touchstart", (e) => {
+                e.target.classList.add("dragging");
+            });
+    
+            document.addEventListener("touchend", (e) => {
+                 e.target.classList.remove("dragging");
+            });
+
+            toDosUndone.forEach(item => {
+                item.addEventListener('touchend', (e) => {
+                    this.toDosModel.update(e.target.id);
+                })
+            })
+
+        }
+
+       
 }
